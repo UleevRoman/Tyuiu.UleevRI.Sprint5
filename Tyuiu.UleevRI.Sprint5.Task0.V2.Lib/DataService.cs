@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tyuiu.cources.programming.interfaces.Sprint5;
+using System.IO;
 
 namespace Tyuiu.UleevRI.Sprint5.Task0.V2.Lib
 {
@@ -11,7 +12,11 @@ namespace Tyuiu.UleevRI.Sprint5.Task0.V2.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            
+            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask0.txt";
+            double y = Math.Pow(Math.E, x) / x;
+            y = Math.Round(y, 3);
+            File.WriteAllText(path, Convert.ToString(y));
+            return path;
         }
     }
 }
